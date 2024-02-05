@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "get_a_gram",
+    "version": "1.0",
+    "description": "Use Instagram on your desktop browser without needing to login",
+    "action": {
+      "default_popup": "./dist/index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.instagram.com/*/"],
+            "js": ["./dist/main.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["./dist/*"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}
